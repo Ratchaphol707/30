@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 require_once 'db.php';
 
 $message = '';
@@ -75,8 +76,8 @@ $salesHistory = $pdo->query("
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales — Gaming Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Sales — NexGen Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -84,7 +85,7 @@ $salesHistory = $pdo->query("
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <h1>🎮 Gaming Store</h1>
+            <h1>⚡ NEXGEN STORE</h1>
             <span>Inventory System</span>
         </div>
         <ul class="sidebar-nav">
@@ -92,6 +93,9 @@ $salesHistory = $pdo->query("
             <li><a href="products.php"><span class="icon">📦</span> <span>Products</span></a></li>
             <li><a href="sales.php" class="active"><span class="icon">💰</span> <span>Sales</span></a></li>
         </ul>
+        <div class="sidebar-footer">
+            <a href="logout.php">🚪 Logout (<?= htmlspecialchars($_SESSION['full_name'] ?? $_SESSION['username']) ?>)</a>
+        </div>
     </aside>
 
     <!-- Main Content -->
@@ -132,7 +136,7 @@ $salesHistory = $pdo->query("
                     </div>
                     <div class="form-group" style="flex: 1; min-width: 150px; margin-bottom: 0;">
                         <label>ยอดรวม</label>
-                        <div class="form-control" style="background: var(--bg-tertiary); font-weight: 700; color: var(--accent);" id="totalDisplay">฿0.00</div>
+                        <div class="form-control" style="background: var(--bg-tertiary); font-weight: 700; color: var(--accent-secondary); font-family: Orbitron, monospace;" id="totalDisplay">฿0.00</div>
                     </div>
                     <div style="margin-bottom: 0;">
                         <button type="submit" class="btn btn-success" style="height: 44px;">💰 บันทึกการขาย</button>

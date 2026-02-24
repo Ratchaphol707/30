@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 require_once 'db.php';
 
 $message = '';
@@ -68,8 +69,8 @@ $products = $pdo->query("
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products — Gaming Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Products — NexGen Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -77,7 +78,7 @@ $products = $pdo->query("
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <h1>🎮 Gaming Store</h1>
+            <h1>⚡ NEXGEN STORE</h1>
             <span>Inventory System</span>
         </div>
         <ul class="sidebar-nav">
@@ -85,6 +86,9 @@ $products = $pdo->query("
             <li><a href="products.php" class="active"><span class="icon">📦</span> <span>Products</span></a></li>
             <li><a href="sales.php"><span class="icon">💰</span> <span>Sales</span></a></li>
         </ul>
+        <div class="sidebar-footer">
+            <a href="logout.php">🚪 Logout (<?= htmlspecialchars($_SESSION['full_name'] ?? $_SESSION['username']) ?>)</a>
+        </div>
     </aside>
 
     <!-- Main Content -->
@@ -124,7 +128,7 @@ $products = $pdo->query("
                         <tr>
                             <td><?= $p['id'] ?></td>
                             <td><strong><?= htmlspecialchars($p['name']) ?></strong></td>
-                            <td><span class="badge badge-accent"><?= htmlspecialchars($p['category_name']) ?></span></td>
+                            <td><span class="badge badge-cyan"><?= htmlspecialchars($p['category_name']) ?></span></td>
                             <td class="price">฿<?= number_format($p['price'], 2) ?></td>
                             <td>
                                 <span class="<?= $p['stock_quantity'] < 5 ? 'stock-low' : 'stock-ok' ?>">
@@ -132,7 +136,7 @@ $products = $pdo->query("
                                 </span>
                             </td>
                             <td>
-                                <button class="btn btn-success btn-sm" onclick="openEditModal(<?= htmlspecialchars(json_encode($p)) ?>)">✏️ แก้ไข</button>
+                                <button class="btn btn-cyber btn-sm" onclick="openEditModal(<?= htmlspecialchars(json_encode($p)) ?>)">✏️ แก้ไข</button>
                                 <a href="products.php?delete=<?= $p['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('คุณต้องการลบสินค้านี้?')">🗑️ ลบ</a>
                             </td>
                         </tr>

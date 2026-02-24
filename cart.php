@@ -40,6 +40,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 // Handle Checkout
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'checkout') {
     if (!empty($_SESSION['cart'])) {
+        if (!isset($_SESSION['customer_id'])) {
+            $_SESSION['redirect_after_login'] = 'cart.php';
+            header('Location: customer-login.php');
+            exit;
+        }
         try {
             $pdo->beginTransaction();
 
@@ -58,8 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             }
 
             // Create sale
-            $stmt = $pdo->prepare("INSERT INTO sales (total_amount) VALUES (?)");
-            $stmt->execute([$totalAmount]);
+            $stmt = $pdo->prepare("INSERT INTO sales (customer_id, total_amount) VALUES (?, ?)");
+            $stmt->execute([$_SESSION['customer_id'], $totalAmount]);
             $saleId = $pdo->lastInsertId();
 
             // Create sale items + deduct stock
@@ -297,7 +302,13 @@ foreach ($_SESSION['cart'] as $item) {
         <nav class="shop-nav">
             <a href="shop.php">🏪 Shop</a>
             <a href="cart.php">🛒 Cart (<?= $cartCount ?>)</a>
-            <a href="login.php">🔐 Admin</a>
+            <?php if (isset($_SESSION['customer_id'])): ?>
+                <span style="color: var(--text-primary); font-size: 0.85rem;">👤 <?= htmlspecialchars($_SESSION['customer_name']) ?></span>
+                <a href="logout-customer.php" style="color: var(--danger); font-size: 0.8rem;">🏃 Logout</a>
+            <?php else: ?>
+                <a href="customer-login.php">🔑 Login</a>
+            <?php endif; ?>
+            <a href="login.php" title="Admin Login">⚙️</a>
         </nav>
     </header>
 

@@ -340,7 +340,13 @@ foreach ($_SESSION['cart'] as $item) {
                 <span class="count"><?= $cartCount ?></span>
                 <?php endif; ?>
             </a>
-            <a href="login.php">🔐 Admin</a>
+            <?php if (isset($_SESSION['customer_id'])): ?>
+                <span style="color: var(--text-primary); font-size: 0.85rem;">👤 <?= htmlspecialchars($_SESSION['customer_name']) ?></span>
+                <a href="logout-customer.php" style="color: var(--danger); font-size: 0.8rem;">🏃 Logout</a>
+            <?php else: ?>
+                <a href="customer-login.php">🔑 Login</a>
+            <?php endif; ?>
+            <a href="login.php" title="Admin Login">⚙️</a>
         </nav>
     </header>
 

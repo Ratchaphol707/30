@@ -73,9 +73,9 @@ INSERT INTO products (category_id, name, description, price, stock_quantity, ima
 
 -- Seed 6 Gaming Keyboards (category: Peripherals = 6)
 INSERT INTO products (category_id, name, description, price, stock_quantity, image_url) VALUES
-(6, 'Razer Huntsman V3 Pro TKL', 'คีย์บอร์ดเกมมิ่ง Analog Optical Switch Rapid Trigger', 7990.00, 10, 'assets/images/kb_1.png'),
-(6, 'Wooting 60HE+', 'คีย์บอร์ดเกมมิ่ง 60% Hall Effect Rapid Trigger', 6990.00, 7, 'assets/images/kb_2.png'),
-(6, 'Logitech G Pro X TKL Rapid', 'คีย์บอร์ดเกมมิ่งไร้สาย GX2 Optical Switch', 5990.00, 14, 'assets/images/kb_3.png'),
-(6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9, 'assets/images/kb_4.png'),
-(6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16, 'assets/images/kb_5.png'),
-(6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22, 'assets/images/kb_6.png');
+(6, 'Razer Huntsman V3 Pro TKL', 'คีย์บอร์ดเกมมิ่ง Analog Optical Switch Rapid Trigger', 7990.00, 10, 'assets/images/kb_1.svg'),
+(6, 'Wooting 60HE+', 'คีย์บอร์ดเกมมิ่ง 60% Hall Effect Rapid Trigger', 6990.00, 7, 'assets/images/kb_2.svg'),
+(6, 'Logitech G Pro X TKL Rapid', 'คีย์บอร์ดเกมมิ่งไร้สาย GX2 Optical Switch', 5990.00, 14, 'assets/images/kb_3.svg'),
+(6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9, 'assets/images/kb_4.svg'),
+(6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16, 'assets/images/kb_5.svg'),
+(6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22, 'assets/images/kb_6.svg');

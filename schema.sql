@@ -63,19 +63,19 @@ INSERT INTO categories (name) VALUES
 ('Peripherals');
 
 -- Seed 6 Gaming Mice (category: Peripherals = 6)
-INSERT INTO products (category_id, name, description, price, stock_quantity) VALUES
-(6, 'Logitech G Pro X Superlight 2', 'เมาส์เกมมิ่งไร้สาย 60g HERO 2 Sensor 32000 DPI', 4490.00, 15),
-(6, 'Razer DeathAdder V3 Pro', 'เมาส์เกมมิ่ง Ergonomic ไร้สาย Focus Pro 30K Sensor', 4290.00, 12),
-(6, 'Razer Viper V3 Pro', 'เมาส์เกมมิ่งไร้สาย 54g Focus Pro 35K Optical Sensor', 5490.00, 8),
-(6, 'SteelSeries Aerox 5 Wireless', 'เมาส์เกมมิ่งไร้สาย 74g TrueMove Air Sensor', 3290.00, 20),
-(6, 'Zowie EC2-CW', 'เมาส์เกมมิ่งไร้สาย Ergonomic 3370 Sensor สำหรับ eSports', 3590.00, 10),
-(6, 'Pulsar X2V2 Mini', 'เมาส์เกมมิ่งไร้สาย Symmetrical 55g PAW3395 Sensor', 2890.00, 18);
+INSERT INTO products (category_id, name, description, price, stock_quantity, image_url) VALUES
+(6, 'Logitech G Pro X Superlight 2', 'เมาส์เกมมิ่งไร้สาย 60g HERO 2 Sensor 32000 DPI', 4490.00, 15, 'assets/images/mouse_1.png'),
+(6, 'Razer DeathAdder V3 Pro', 'เมาส์เกมมิ่ง Ergonomic ไร้สาย Focus Pro 30K Sensor', 4290.00, 12, 'assets/images/mouse_2.png'),
+(6, 'Razer Viper V3 Pro', 'เมาส์เกมมิ่งไร้สาย 54g Focus Pro 35K Optical Sensor', 5490.00, 8, 'assets/images/mouse_3.png'),
+(6, 'SteelSeries Aerox 5 Wireless', 'เมาส์เกมมิ่งไร้สาย 74g TrueMove Air Sensor', 3290.00, 20, 'assets/images/mouse_4.png'),
+(6, 'Zowie EC2-CW', 'เมาส์เกมมิ่งไร้สาย Ergonomic 3370 Sensor สำหรับ eSports', 3590.00, 10, 'assets/images/mouse_5.png'),
+(6, 'Pulsar X2V2 Mini', 'เมาส์เกมมิ่งไร้สาย Symmetrical 55g PAW3395 Sensor', 2890.00, 18, 'assets/images/mouse_6.png');
 
 -- Seed 6 Gaming Keyboards (category: Peripherals = 6)
-INSERT INTO products (category_id, name, description, price, stock_quantity) VALUES
-(6, 'Razer Huntsman V3 Pro TKL', 'คีย์บอร์ดเกมมิ่ง Analog Optical Switch Rapid Trigger', 7990.00, 10),
-(6, 'Wooting 60HE+', 'คีย์บอร์ดเกมมิ่ง 60% Hall Effect Rapid Trigger', 6990.00, 7),
-(6, 'Logitech G Pro X TKL Rapid', 'คีย์บอร์ดเกมมิ่งไร้สาย GX2 Optical Switch', 5990.00, 14),
-(6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9),
-(6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16),
-(6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22);
+INSERT INTO products (category_id, name, description, price, stock_quantity, image_url) VALUES
+(6, 'Razer Huntsman V3 Pro TKL', 'คีย์บอร์ดเกมมิ่ง Analog Optical Switch Rapid Trigger', 7990.00, 10, 'assets/images/kb_1.png'),
+(6, 'Wooting 60HE+', 'คีย์บอร์ดเกมมิ่ง 60% Hall Effect Rapid Trigger', 6990.00, 7, 'assets/images/kb_2.png'),
+(6, 'Logitech G Pro X TKL Rapid', 'คีย์บอร์ดเกมมิ่งไร้สาย GX2 Optical Switch', 5990.00, 14, 'assets/images/kb_3.png'),
+(6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9, 'assets/images/kb_4.png'),
+(6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16, 'assets/images/kb_5.png'),
+(6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22, 'assets/images/kb_6.png');

@@ -86,9 +86,9 @@ INSERT INTO products (category_id, name, description, price, stock_quantity, ima
 
 -- Seed 6 Gaming Keyboards (category: Peripherals = 6)
 INSERT INTO products (category_id, name, description, price, stock_quantity, image_url) VALUES
-(6, 'Razer Huntsman V3 Pro TKL', 'คีย์บอร์ดเกมมิ่ง Analog Optical Switch Rapid Trigger', 7990.00, 10, 'https://cdn.pixabay.com/photo/2020/04/08/13/24/keyboard-5017325_1280.jpg'),
-(6, 'Wooting 60HE+', 'คีย์บอร์ดเกมมิ่ง 60% Hall Effect Rapid Trigger', 6990.00, 7, 'https://cdn.pixabay.com/photo/2016/11/29/06/15/computer-1867758_1280.jpg'),
-(6, 'Logitech G Pro X TKL Rapid', 'คีย์บอร์ดเกมมิ่งไร้สาย GX2 Optical Switch', 5990.00, 14, 'https://cdn.pixabay.com/photo/2021/08/04/13/06/software-developer-6521720_1280.jpg'),
-(6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9, 'https://cdn.pixabay.com/photo/2017/01/18/14/40/keyboard-1989932_1280.jpg'),
-(6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16, 'https://cdn.pixabay.com/photo/2020/10/01/17/11/keyboard-5619114_1280.jpg'),
-(6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22, 'https://cdn.pixabay.com/photo/2021/05/23/18/31/keyboard-6277024_1280.jpg');
+(6, 'Razer Huntsman V3 Pro TKL', 'คีย์บอร์ดเกมมิ่ง Analog Optical Switch Rapid Trigger', 7990.00, 10, 'assets/images/kb_1.jpg'),
+(6, 'Wooting 60HE+', 'คีย์บอร์ดเกมมิ่ง 60% Hall Effect Rapid Trigger', 6990.00, 7, 'assets/images/kb_2.jpg'),
+(6, 'Logitech G Pro X TKL Rapid', 'คีย์บอร์ดเกมมิ่งไร้สาย GX2 Optical Switch', 5990.00, 14, 'assets/images/kb_3.jpg'),
+(6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9, 'assets/images/kb_4.jpg'),
+(6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16, 'assets/images/kb_5.jpg'),
+(6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22, 'assets/images/kb_6.jpg');

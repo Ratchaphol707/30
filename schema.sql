@@ -104,3 +104,12 @@ INSERT INTO products (category_id, name, description, price, stock_quantity, ima
 (7, 'BenQ Zowie XL2546K', 'จอเกมมิ่ง eSports 24.5 นิ้ว 240Hz DyAc+ FHD', 15990.00, 6, 'assets/images/monitor_4.png'),
 (7, 'Dell Alienware AW3423DWF', 'จอเกมมิ่ง 34 นิ้ว Curved QD-OLED Ultrawide 165Hz', 32990.00, 4, 'assets/images/monitor_5.png'),
 (7, 'MSI MAG 274QRF-QD', 'จอเกมมิ่ง 27 นิ้ว 165Hz Rapid IPS QHD HDR', 11990.00, 15, 'assets/images/monitor_6.png');
+
+-- Seed 6 Gaming GPUs (category: Graphics Cards = 1)
+INSERT INTO products (category_id, name, description, price, stock_quantity, image_url) VALUES
+(1, 'NVIDIA GeForce RTX 4090', 'การ์ดจอเกมมิ่ง 24GB GDDR6X Ada Lovelace DLSS 3.0 Ray Tracing', 62990.00, 3, 'assets/images/gpu_1.png'),
+(1, 'NVIDIA GeForce RTX 4070 Ti Super', 'การ์ดจอเกมมิ่ง 16GB GDDR6X Ada Lovelace DLSS 3.0', 29990.00, 7, 'assets/images/gpu_2.png'),
+(1, 'AMD Radeon RX 7900 XTX', 'การ์ดจอเกมมิ่ง 24GB GDDR6 RDNA 3 Ray Tracing', 34990.00, 5, 'assets/images/gpu_3.png'),
+(1, 'NVIDIA GeForce RTX 4060 Ti', 'การ์ดจอเกมมิ่ง 8GB GDDR6 Ada Lovelace DLSS 3.0', 15990.00, 12, 'assets/images/gpu_4.png'),
+(1, 'NVIDIA GeForce RTX 4070 Super', 'การ์ดจอเกมมิ่ง 12GB GDDR6X Ada Lovelace DLSS 3.0', 22990.00, 8, 'assets/images/gpu_5.png'),
+(1, 'AMD Radeon RX 7800 XT', 'การ์ดจอเกมมิ่ง 16GB GDDR6 RDNA 3 Ray Tracing FSR 3', 18990.00, 10, 'assets/images/gpu_6.png');

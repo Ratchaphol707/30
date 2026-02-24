@@ -39,14 +39,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
     }
 }
 
-// Fetch all products
-$products = $pdo->query("
-    SELECT p.*, c.name AS category_name
-    FROM products p
-    LEFT JOIN categories c ON p.category_id = c.id
-    WHERE p.stock_quantity > 0
-    ORDER BY p.name
-")->fetchAll();
+// Category filter
+$filter = $_GET['cat'] ?? 'all';
+
+// Fetch categories for filter buttons
+$categories = $pdo->query("SELECT * FROM categories ORDER BY name")->fetchAll();
+
+// Fetch products (filtered or all)
+if ($filter !== 'all') {
+    $stmt = $pdo->prepare("
+        SELECT p.*, c.name AS category_name
+        FROM products p
+        LEFT JOIN categories c ON p.category_id = c.id
+        WHERE p.stock_quantity > 0 AND c.name = ?
+        ORDER BY p.name
+    ");
+    $stmt->execute([$filter]);
+    $products = $stmt->fetchAll();
+} else {
+    $products = $pdo->query("
+        SELECT p.*, c.name AS category_name
+        FROM products p
+        LEFT JOIN categories c ON p.category_id = c.id
+        WHERE p.stock_quantity > 0
+        ORDER BY p.name
+    ")->fetchAll();
+}
 
 // Cart count
 $cartCount = 0;
@@ -316,6 +334,44 @@ foreach ($_SESSION['cart'] as $item) {
         }
 
         /* ===== Footer ===== */
+        /* ===== Category Filters ===== */
+        .filter-bar {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 12px var(--accent-glow);
+        }
+
+        .filter-btn.active {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: #fff;
+            box-shadow: 0 4px 16px var(--accent-glow);
+        }
+
         .shop-footer {
             background: var(--bg-secondary);
             border-top: 1px solid var(--border);
@@ -367,6 +423,13 @@ foreach ($_SESSION['cart'] as $item) {
 
     <!-- Product Grid -->
     <div class="shop-container">
+        <!-- Category Filter Buttons -->
+        <div class="filter-bar">
+            <a href="shop.php" class="filter-btn <?= $filter === 'all' ? 'active' : '' ?>">🎮 ทั้งหมด</a>
+            <a href="shop.php?cat=Peripherals" class="filter-btn <?= $filter === 'Peripherals' ? 'active' : '' ?>">🖱️ เมาส์ & คีย์บอร์ด</a>
+            <a href="shop.php?cat=Monitors" class="filter-btn <?= $filter === 'Monitors' ? 'active' : '' ?>">🖥️ จอมอนิเตอร์</a>
+            <a href="shop.php?cat=Graphics Cards" class="filter-btn <?= $filter === 'Graphics Cards' ? 'active' : '' ?>">🎴 การ์ดจอ</a>
+        </div>
         <div class="product-grid">
             <?php foreach ($products as $p): ?>
             <div class="product-card">

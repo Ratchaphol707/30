@@ -1,4 +1,5 @@
 <?php
+require_once 'auth.php';
 require_once 'db.php';
 
 // Query stats
@@ -24,8 +25,8 @@ $recentSales = $pdo->query("
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — Gaming Store</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <title>Dashboard — NexGen Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
@@ -33,7 +34,7 @@ $recentSales = $pdo->query("
     <!-- Sidebar -->
     <aside class="sidebar">
         <div class="sidebar-brand">
-            <h1>🎮 Gaming Store</h1>
+            <h1>⚡ NEXGEN STORE</h1>
             <span>Inventory System</span>
         </div>
         <ul class="sidebar-nav">
@@ -41,6 +42,9 @@ $recentSales = $pdo->query("
             <li><a href="products.php"><span class="icon">📦</span> <span>Products</span></a></li>
             <li><a href="sales.php"><span class="icon">💰</span> <span>Sales</span></a></li>
         </ul>
+        <div class="sidebar-footer">
+            <a href="logout.php">🚪 Logout (<?= htmlspecialchars($_SESSION['full_name'] ?? $_SESSION['username']) ?>)</a>
+        </div>
     </aside>
 
     <!-- Main Content -->
@@ -62,7 +66,7 @@ $recentSales = $pdo->query("
                 <div class="stat-value"><?= number_format($lowStock) ?></div>
                 <div class="stat-label">สินค้า Stock ต่ำ (&lt;5)</div>
             </div>
-            <div class="stat-card success">
+            <div class="stat-card cyan">
                 <div class="stat-icon">💰</div>
                 <div class="stat-value">฿<?= number_format($totalSales, 2) ?></div>
                 <div class="stat-label">ยอดขายรวม</div>

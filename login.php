@@ -67,6 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
                 <button type="submit" class="btn btn-primary">🔓 เข้าสู่ระบบ</button>
             </form>
+
+            <div style="text-align: center; margin-top: 1.5rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+                <a href="shop.php" style="color: var(--accent); text-decoration: none; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 600;">🛒 ไปที่หน้าร้านค้า (สำหรับลูกค้า)</a>
+            </div>
         </div>
     </div>
 

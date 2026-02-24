@@ -92,3 +92,15 @@ INSERT INTO products (category_id, name, description, price, stock_quantity, ima
 (6, 'SteelSeries Apex Pro TKL (2023)', 'คีย์บอร์ดเกมมิ่ง OmniPoint 2.0 Adjustable Switch', 6490.00, 9, 'assets/images/kb_4.png'),
 (6, 'Corsair K65 Plus Wireless', 'คีย์บอร์ดเกมมิ่งไร้สาย 75% MLX Red Switch RGB', 4990.00, 16, 'assets/images/kb_5.png'),
 (6, 'Ducky One 3 SF', 'คีย์บอร์ดเกมมิ่ง 65% Hot-swap Cherry MX Switch PBT', 3990.00, 22, 'assets/images/kb_6.png');
+
+-- Seed category: Monitors
+INSERT INTO categories (name) VALUES ('Monitors');
+
+-- Seed 6 Gaming Monitors (category: Monitors = 7)
+INSERT INTO products (category_id, name, description, price, stock_quantity, image_url) VALUES
+(7, 'ASUS ROG Swift PG27AQN', 'จอเกมมิ่ง 27 นิ้ว 360Hz IPS QHD Nvidia G-Sync', 29990.00, 5, 'assets/images/monitor_1.png'),
+(7, 'Samsung Odyssey G7 32', 'จอเกมมิ่ง 32 นิ้ว Curved 1000R QLED 240Hz QHD', 16990.00, 8, 'assets/images/monitor_2.png'),
+(7, 'LG UltraGear 27GP850-B', 'จอเกมมิ่ง 27 นิ้ว 165Hz Nano IPS QHD 1ms', 12990.00, 12, 'assets/images/monitor_3.png'),
+(7, 'BenQ Zowie XL2546K', 'จอเกมมิ่ง eSports 24.5 นิ้ว 240Hz DyAc+ FHD', 15990.00, 6, 'assets/images/monitor_4.png'),
+(7, 'Dell Alienware AW3423DWF', 'จอเกมมิ่ง 34 นิ้ว Curved QD-OLED Ultrawide 165Hz', 32990.00, 4, 'assets/images/monitor_5.png'),
+(7, 'MSI MAG 274QRF-QD', 'จอเกมมิ่ง 27 นิ้ว 165Hz Rapid IPS QHD HDR', 11990.00, 15, 'assets/images/monitor_6.png');
